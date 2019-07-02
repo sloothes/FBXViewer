@@ -77,28 +77,35 @@
 <meta name="msapplication-TileImage" content="/mstile-150x150.png?v=18">
 <meta name="application-name" content="Discover three.js" />
 </head>
+
 <body class="full-width">
+
 <div class="nav-wrapper fixed">
-<input type="checkbox" id="nav-panel-right-trigger" class="nav-panel-trigger" />
-<label for="nav-panel-right-trigger" class="button-menu small-screen-only nav-panel-right-trigger-label show-always home-nav"><i class="close-icon far fa-window-close"></i><i class="open-icon fas fa-bars"></i> Menu</label>
-<nav class="nav-panel nav-right ">
-<ul class="links" style="justify-content: left;">
-<li><a href="/">DISCOVER three.js</a></li>
-<li><a href="/book/contents/">Table Of Contents</a></li>
-<li><a href="/examples/">Live Code Examples</a></li>
+    <input type="checkbox" id="nav-panel-right-trigger" class="nav-panel-trigger" />
+    <label for="nav-panel-right-trigger" class="button-menu small-screen-only nav-panel-right-trigger-label show-always home-nav"><i class="close-icon far fa-window-close"></i><i class="open-icon fas fa-bars"></i> Menu</label>
+    <nav class="nav-panel nav-right ">
+        <ul class="links" style="justify-content: left;">
 
-<li><a href="/apps/">Apps</a></li>
+            <li><a href="//discoverthreejs.com">DISCOVER three.js</a></li>
+            <li><a href="//discoverthreejs.com/book/contents/">Table Of Contents</a></li>
+            <li><a href="//discoverthreejs.com/examples/">Live Code Examples</a></li>
 
-<li style="margin: auto;"><form method="POST" action="" class="email-signup-form " aria-label="Email Signup Form">
-<input type="hidden" name="csrfmiddlewaretoken" value="JwWxjLxtZO54tO8HnlR4q5yGkHQR80DqUAdTB4tT6SgYuF5AIFn9axpJJrY6sCGa">
-<span>Stay up to date!</span>
-<input type="email" name="email" class="form-control input-lg email-input" placeholder="your@email.com" aria-label="Email Signup Input">
-<button>Submit</button>
-<p class="messages"></p>
-</form></li>
-</ul>
-</nav>
+            <li><a href="discoverthreejs.com/apps/">Apps</a></li>
+
+            <li style="margin: auto;">
+                <form class="email-signup-form" aria-label="Email Signup Form">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="JwWxjLxtZO54tO8HnlR4q5yGkHQR80DqUAdTB4tT6SgYuF5AIFn9axpJJrY6sCGa">
+                    <span>Stay up to date!</span>
+                    <input type="email" name="email" class="form-control input-lg email-input" placeholder="your@email.com" aria-label="Email Signup Input">
+                    <button>Submit</button>
+                    <p class="messages"></p>
+                </form>
+            </li>
+
+        </ul>
+    </nav>
 </div>
+
 <main class="full-page">
 <div id="loading-overlay" class="canvas-overlay">
 <h1>three.js Loader</h1>
