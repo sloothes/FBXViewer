@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<title>Quickly Load and Test Your Models with three.js!</title>
+<meta property="og:title" content="Quickly Load and Test Your Models with three.js!">
+<meta name="twitter:title" content="Quickly Load and Test Your Models with three.js!" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Viewer for glTF, FBX and Collada (DAE) files. Always using loaders from the latest version of three.js.">
+<meta property="og:description" content="Viewer for glTF, FBX and Collada (DAE) files. Always using loaders from the latest version of three.js.">
+<meta name="twitter:description" content="Viewer for glTF, FBX and Collada (DAE) files. Always using loaders from the latest version of three.js." />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="ROBOTS" content="INDEX, FOLLOW">
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-116148037-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<meta itemprop="name" content="Discover three.js">
+<meta itemprop="keywords" content="threejs webgl opengl fbx gltf khronos webvr vr webdev design cg graphics animation javascript esnext es6 education tutorials blog ebook node npm" />
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "image": "https://discoverthreejs.com/static/images/loader.jpg",
+  "mainEntity":{
+    "@type": "Book",
+    "author": {
+      "@type": "Person",
+      "name": "Lewy Blue",
+      "jobTitle": "Author",
+      "url": "https://twitter.com/lewy_blue"
+    },
+    "about": "",
+    "copyrightHolder": "https://discoverthreejs.com",
+    "copyrightYear": "2019",
+    "bookFormat": "http://schema.org/EBook",
+    "datePublished": "2018-10-01",
+    "image": "https://discoverthreejs.com/static/images/logo.png",
+    "inLanguage": "English",
+    "name": "Discover three.js",
+    "genre": "Education",
+    "keywords": "threejs webgl animation javascript es6 education tutorials blog ebook",
+    "publisher": {
+      "@type": "Organization",
+      "name": "https://discoverthreejs.com"",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://discoverthreejs.com/static/images/logo.png"
+      }
+    }
+  }
+}
+</script>
+<meta property="og:site_name" content="Discover three.js" />
+<meta property="og:type" content="book" />
+<meta property="og:url" content="https://discoverthreejs.com/" />
+<meta property="og:image" content="https://discoverthreejs.com/static/images/loader.jpg" />
+<meta property="twitter:image" content="https://discoverthreejs.com/static/images/loader.jpg" />
+<meta name="twitter:creator" content="@lewy_blue">
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://discoverthreejs.com/apps/loader/" />
+<link href="/static/css/main.min.css?v=18" rel="stylesheet">
+<noscript><link href="/static/css/noscript.css?v=18" rel="stylesheet"></noscript>
+<link rel="shortcut icon" type="image/png" href="/favicon.ico?v=18" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=18">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=18">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=18">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="manifest" href="/site.json?v=18">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=18" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="/mstile-150x150.png?v=18">
+<meta name="application-name" content="Discover three.js" />
+</head>
+<body class="full-width">
+<div class="nav-wrapper fixed">
+<input type="checkbox" id="nav-panel-right-trigger" class="nav-panel-trigger" />
+<label for="nav-panel-right-trigger" class="button-menu small-screen-only nav-panel-right-trigger-label show-always home-nav"><i class="close-icon far fa-window-close"></i><i class="open-icon fas fa-bars"></i> Menu</label>
+<nav class="nav-panel nav-right ">
+<ul class="links" style="justify-content: left;">
+<li><a href="/">DISCOVER three.js</a></li>
+<li><a href="/book/contents/">Table Of Contents</a></li>
+<li><a href="/examples/">Live Code Examples</a></li>
+
+<li><a href="/apps/">Apps</a></li>
+
+<li style="margin: auto;"><form method="POST" action="" class="email-signup-form " aria-label="Email Signup Form">
+<input type="hidden" name="csrfmiddlewaretoken" value="JwWxjLxtZO54tO8HnlR4q5yGkHQR80DqUAdTB4tT6SgYuF5AIFn9axpJJrY6sCGa">
+<span>Stay up to date!</span>
+<input type="email" name="email" class="form-control input-lg email-input" placeholder="your@email.com" aria-label="Email Signup Input">
+<button>Submit</button>
+<p class="messages"></p>
+</form></li>
+</ul>
+</nav>
+</div>
+<main class="full-page">
+<div id="loading-overlay" class="canvas-overlay">
+<h1>three.js Loader</h1>
+<button id="main-upload" class="upload-button" style="margin-top:-5rem;margin-bottom:2rem;">drop files here</button>
+<h2 style="border: 0;">
+Viewer for <button id="load-gltf">glTF</button>, <button id="load-fbx">FBX</button> and Collada (Dae) Files Using Loaders from the Latest Version of three.js.
+</h2>
+</div>
+<div id="controls-overlay" class="canvas-overlay hide">
+<button id="reset" class="button-menu">reset</button>
+<button id="secondary-upload" class="button-menu">upload another</button>
+<button id="gamma-toggle" class="button-menu">gamma output: false</button>
+<button id="tonemapping-toggle" class="button-menu">Tone mapping: Linear</button>
+</div>
+<div id="container"></div>
+</main>
+</div>
+<script defer src="https://threejs.org/build/three.min.js"></script>
+<script defer src="https://threejs.org/examples/js/libs/inflate.min.js"></script>
+<script defer src="https://threejs.org/examples/js/loaders/DDSLoader.js"></script>
+<script defer src="https://threejs.org/examples/js/loaders/FBXLoader.js"></script>
+<script defer src="https://threejs.org/examples/js/loaders/DRACOLoader.js"></script>
+<script defer src="https://threejs.org/examples/js/loaders/GLTFLoader.js"></script>
+<script defer src="https://threejs.org/examples/js/loaders/ColladaLoader.js"></script>
+<script defer src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+<script defer src="/static/js/loader.min.js?v=18"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round|Open+Sans|Roboto+Mono" rel="stylesheet">
+</body>
+</html>
